@@ -5,66 +5,92 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jjerde <jjerde@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/12/05 15:05:03 by jjerde            #+#    #+#              #
-#    Updated: 2019/03/30 19:18:53 by jjerde           ###   ########.fr        #
+#    Created: 2019/05/15 15:17:26 by jjerde            #+#    #+#              #
+#    Updated: 2019/11/05 15:25:47 by jjerde           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, clean, fclean, re
+#======================P̶O̶N̶Y̶ PHONY==========================================#
+.PHONY: all, clean, fclean, re, debmsg, debug, redebug
 
+#======================Folders & Files=========================================#
 NAME =		libft.a
-OBJ =		ft_lstdelone.o ft_putchar_fd.o ft_strdup.o \
-			ft_strnew.o ft_lstiter.o ft_putendl.o \
-			ft_strequ.o ft_strnstr.o ft_lstmap.o \
-			ft_putendl_fd.o ft_striter.o ft_strrchr.o \
-			ft_atoi.o ft_lstnew.o ft_putnbr.o \
-			ft_striteri.o ft_strsplit.o ft_bzero.o \
-			ft_memalloc.o ft_putnbr_fd.o ft_strjoin.o \
-			ft_strstr.o ft_isalnum.o ft_memccpy.o \
-			ft_putstr.o ft_strlcat.o ft_strsub.o \
-			ft_isalpha.o ft_memchr.o ft_putstr_fd.o \
-			ft_strlen.o ft_strtrim.o ft_isascii.o \
-			ft_memcmp.o ft_strcat.o ft_strmap.o \
-			ft_tolower.o ft_isdigit.o ft_memcpy.o \
-			ft_strchr.o ft_strmapi.o ft_toupper.o \
-			ft_isprint.o ft_memdel.o ft_strclr.o \
-			ft_strncat.o ft_itoa.o ft_memmove.o \
-			ft_strcmp.o ft_strncmp.o ft_lstadd.o \
-			ft_memset.o ft_strcpy.o ft_strncpy.o \
-			ft_lstdel.o ft_putchar.o ft_strdel.o \
-			ft_strnequ.o ft_strclen.o ft_isspace.o \
-			ft_isxdigit.o ft_clearone.o ft_list_size.o \
-			ft_count_words.o
-SOURCE =	ft_lstdelone.c ft_putchar_fd.c ft_strdup.c \
-			ft_strnew.c ft_lstiter.c ft_putendl.c \
-			ft_strequ.c ft_strnstr.c ft_lstmap.c \
-			ft_putendl_fd.c ft_striter.c ft_strrchr.c \
-			ft_atoi.c ft_lstnew.c ft_putnbr.c \
-			ft_striteri.c ft_strsplit.c ft_bzero.c \
-			ft_memalloc.c ft_putnbr_fd.c ft_strjoin.c \
-			ft_strstr.c ft_isalnum.c ft_memccpy.c \
-			ft_putstr.c ft_strlcat.c ft_strsub.c \
-			ft_isalpha.c ft_memchr.c ft_putstr_fd.c \
-			ft_strlen.c ft_strtrim.c ft_isascii.c \
-			ft_memcmp.c ft_strcat.c ft_strmap.c \
-			ft_tolower.c ft_isdigit.c ft_memcpy.c \
-			ft_strchr.c ft_strmapi.c ft_toupper.c \
-			ft_isprint.c ft_memdel.c ft_strclr.c \
-			ft_strncat.c ft_itoa.c ft_memmove.c \
-			ft_strcmp.c ft_strncmp.c ft_lstadd.c \
-			ft_memset.c ft_strcpy.c ft_strncpy.c \
-			ft_lstdel.c ft_putchar.c ft_strdel.c \
-			ft_strnequ.c ft_strclen.c ft_isspace.c \
-			ft_isxdigit.c ft_clearone.c ft_list_size.c \
-			ft_count_words.c
-# ==================== RULES =========================== #
-all: 		$(NAME)
+SRC =		ft_flag_g.c ft_litoa.c ft_minus.c ft_strchr.c ft_strmap.c \
+			ft_strstr.c check_hub.c ft_flag_i.c ft_lstadd.c \
+			ft_strclen.c ft_strmapi.c ft_strsub.c checker.c ft_flag_o_u_x.c \
+			ft_lstdel.c ft_proverka.c ft_strclr.c ft_strncat.c ft_strtrim.c \
+			colors.c ft_flag_p.c ft_lstdelone.c ft_putchar.c ft_strcmp.c \
+			ft_strncmp.c ft_tolower.c flag_checker.c ft_i_5.c ft_lstiter.c \
+			ft_putchar_fd.c ft_strcpy.c ft_strncpy.c ft_toupper.c \
+			flag_g_free.c ft_isalnum.c ft_lstmap.c ft_putendl.c ft_strdel.c \
+			ft_strnequ.c ft_uitoa.c ft_atoi.c ft_isalpha.c ft_lstnew.c \
+			ft_putendl_fd.c ft_strdup.c ft_strnew.c ft_width.c ft_bzero.c \
+			ft_isascii.c ft_memalloc.c ft_putnbr.c ft_strequ.c ft_strnstr.c \
+			 ft_chacc.c ft_isdigit.c ft_memccpy.c ft_putnbr_fd.c \
+			ft_striter.c ft_strrchr.c main.c ft_clearone.c ft_isprint.c \
+			ft_memchr.c ft_putstr.c ft_striteri.c ft_strrejoin.c \
+			mod_redirect.c ft_count_words.c ft_isspace.c ft_memcmp.c \
+			ft_putstr_fd.c ft_strjoin.c ft_strrejoinre.c modificators.c \
+			ft_flag_e.c ft_isxdigit.c ft_memcpy.c ft_sqrt.c ft_strjoinfree.c \
+			ft_strrejoinren.c printf_depleted.c ft_flag_e_2.c ft_itoa.c \
+			ft_memdel.c ft_sstrlen.c ft_strjoinre.c ft_strreplchar.c \
+			redirect_target_get.c ft_flag_f.c ft_list_last.c ft_memmove.c \
+			ft_sswap.c ft_strlcat.c ft_strsearch.c redirect_target_icsf_.c \
+			ft_flag_f_2.c ft_list_size.c ft_memset.c ft_strcat.c ft_strlen.c \
+			ft_strsplit.c ft_linedelone.c get_next_line.c
+WORKDIR =	../
+HEADER =	$(WORKDIR)includes/ft_printf.h
+OBJ =		$(SRC:.c=.o)
+HFLAGS =	-I$(WORKDIR)includes/
 
-$(NAME):
-		gcc -Wall -Wextra -Werror -c -I. $(SOURCE)
-		ar rc $(NAME) $(OBJ)
+#======================COLORS & Co=============================================#
+GREEN =		\033[1;32m
+RED =		\033[1;31m
+RST =		\033[0m
+BOLD =		\033[1m
+CYAN =		\033[1;36m
+PREFIX =	[$(CYAN)$(NAME)$(RST)]:\t
+
+#======================Debug & Flags===========================================#
+ifeq ($(DEBUGMODE), 1)
+	FLAGS		:=	-Wall -Wextra -Werror -g
+	DEBUGMSG	:= $(PREFIX)⚠️  \033[1;33mDebug mode $(GREEN)enabled.$(RST)\n
+else
+	FLAGS		:=	-Wall -Wextra -Werror
+	DEBUGMSG	:= $(PREFIX)⚠️  \033[1;33mDebug mode $(RED)disabled.$(RST)\n
+endif
+
+#======================Rules===================================================#
+%.o: %.c
+		@printf "%-95c\r$(PREFIX)🕐  Compiling file:\t \
+%-25s=>\t%-25s\r" ' ' "$<" "$@"
+		@gcc -c $^ $(FLAGS) $(HFLAGS)
+
+all: $(NAME)
+		@echo "$(PREFIX)✅  $(GREEN)Done.$(RST)"
+
+$(NAME): $(OBJ) $(SRC) $(HEADER)
+		@printf "%-95c\r$(PREFIX)✅  $(GREEN)All \
+obj-files accepted.$(RST)\n" ' '
+		@printf "$(PREFIX)📦  Building $(NAME)...\n"
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
+
 clean:
-		/bin/rm -f $(OBJ)
-fclean: 	clean
-		/bin/rm -f $(NAME)
-re: 		fclean all
+		@echo "$(PREFIX)♻️  $(RED)Removing obj-files...$(RST)"
+		@rm -f $(OBJ)
+
+dellib:
+		@echo "$(PREFIX)♻️  $(RED)Removing library file...$(RST)"
+		@rm -f $(NAME)
+
+fclean: clean dellib
+
+re: fclean
+		@make all
+
+debug:
+		@make all DEBUGMODE=1
+
+redebug:
+		@make re DEBUGMODE=1

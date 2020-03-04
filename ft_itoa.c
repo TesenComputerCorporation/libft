@@ -6,13 +6,13 @@
 /*   By: jjerde <jjerde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 15:41:51 by jjerde            #+#    #+#             */
-/*   Updated: 2019/03/29 18:43:11 by jjerde           ###   ########.fr       */
+/*   Updated: 2019/09/28 20:51:54 by jjerde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	int_len(int c)
+int			int_len(int c)
 {
 	int		i;
 
